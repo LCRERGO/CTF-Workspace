@@ -24,7 +24,6 @@ utilities like nmap and dig.
 - curl
 - jq
 - tidy
-- wireshark(linux host only)
 
 ## General Security
 - pwntools

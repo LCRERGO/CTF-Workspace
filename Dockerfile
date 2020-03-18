@@ -1,19 +1,19 @@
 # A docker for ctfs
 FROM debian
 # Metadata
-LABEL version="1.0.3"
+LABEL version="1.0.2"
 LABEL author="Lucas Cruz dos Reis"
 LABEL description="A personal docker image to help in ctfs"
 
 # Default configuration
 WORKDIR /workspace
-RUN apt-get update && apt-get install build-essential strace ltrace gdb \
-    vim wget curl dnsutils git python3 python3-pip python3-setuptools \
-    python3-dev jq tidy whois default-jdk nmap net-tools tcpdump unzip \
+RUN apt-get update && apt-get install apt-utils build-essential 
+    strace ltrace gdb vim wget curl dnsutils git python3 python3-pip \
+    python3-setuptools python3-dev jq tidy whois default-jdk nmap net-tools \
+    tcpdump unzip \
     -y \
     --no-install-recommends
 # Graphical utilities
-RUN apt-get install -y wireshark-qt -o Dpkg::Options::="--force-confdef"
 RUN pip3 install pwntools
 
 # Compilation Settings
